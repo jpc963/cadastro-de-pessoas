@@ -1,10 +1,11 @@
-import cadastro_pessoa.funcao_cadastro as fc
 import pyodbc
+import cadastro_pessoa.funcao_cadastro as fc
+
 
 # Dados de conexão com o banco de dados
 dados_conexao = (
     'Driver={SQL Server};' # Driver do SQL Server
-    'Server=host\SQLEXPRESS;' # Nome do servidor
+    'Server=JOAO\SQLEXPRESS;' # Nome do servidor
     'Database=CadastroPessoas;' # Nome do banco de dados
 )
 

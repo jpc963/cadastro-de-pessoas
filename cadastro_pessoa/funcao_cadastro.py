@@ -1,6 +1,20 @@
 import pyodbc
 
 
+# ─── Conexão Com O Banco De Dados ─────────────────────────────────────────────
+
+dados_conexao = (
+    'Driver={SQL Server};' # Driver do SQL Server
+    'Server=JOAO\SQLEXPRESS;' # Nome do servidor
+    'Database=CadastroPessoas;' # Nome do banco de dados
+)
+
+conexao = pyodbc.connect(dados_conexao)
+cursor = conexao.cursor()
+
+cursor.execute("""SELECT * FROM Pessoas ORDER BY ID_Pessoa""")  # Ordena a tabela por ID_Pessoa
+
+
 # ─── Verificação do Nome ───────────────────────────────────────────────────────
 
 
@@ -480,16 +494,3 @@ altura = 'Altura (em metros): '
 cpf = 'CPF: '
 salario = 'Salário: R$'
 pessoas_cadastradas = []
-
-# ─── Conexão Com O Banco De Dados ─────────────────────────────────────────────
-
-dados_conexao = (
-    'Driver={SQL Server};'
-    'Server=host\SQLEXPRESS;'
-    'Database=CadastroPessoas;'
-)
-
-conexao = pyodbc.connect(dados_conexao)
-cursor = conexao.cursor()
-
-cursor.execute("""SELECT * FROM Pessoas ORDER BY ID_Pessoa""")
