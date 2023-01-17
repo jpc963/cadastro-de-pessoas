@@ -485,7 +485,7 @@ pessoas_cadastradas = []
 
 dados_conexao = (
     'Driver={SQL Server};'
-    'Server=JOAO\SQLEXPRESS;'
+    'Server=host\SQLEXPRESS;'
     'Database=CadastroPessoas;'
 )
 
